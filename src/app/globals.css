@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@font-face {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 400 600 700;
+  font-display: swap;
+  src: url("/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  /* Fonts */
+  --font-*: initial;
+  --font-sans: "DM Sans", sans-serif;
+  /* Colors */
+  --color-neutral-900: hsl(233, 18%, 9%);
+  --color-neutral-800: hsl(235, 14%, 15%);
+  --color-neutral-700: hsl(235, 13%, 19%);
+  --color-neutral-600: hsl(234, 14%, 29%);
+  --color-neutral-200: hsl(240, 26%, 92%);
+  --color-neutral-100: hsl(240, 24%, 96%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-purple-400: hsl(274, 90%, 80%);
+  --color-purple-500: hsl(274, 90%, 73%);
+  --color-yellow-500: hsl(37, 100%, 50%);
+  --color-orange-500: hsl(15, 99%, 67%);
+  --color-orange-800: hsl(15, 99%, 43%);
+  /* Font-Size */
+  --text-400: 1rem;
+  --text-400--line-height: 1.3;
+  --text-400--letter-spacing: -0.6px;
+  --text-400--font-weight: 400;
+  --text-500: 1.25rem;
+  --text-500--line-height: 1.4;
+  --text-500--letter-spacing: -0.6px;
+  --text-500--font-weight: 400;
+  --text-600: 1.5rem;
+  --text-600--line-height: 1.3;
+  --text-600--letter-spacing: -1px;
+  --text-600--font-weight: 600;
+  --text-700: 2.5rem;
+  --text-700--line-height: 1;
+  --text-700--letter-spacing: -1px;
+  --text-700--font-weight: 700;
+  --text-900: 4rem;
+  --text-900--line-height: 1;
+  --text-900--letter-spacing: -1px;
+  --text-900--font-weight: 700;
+  /* Radius */
+  --radius-*: initial;
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+  /* Breakpoints */
+  --breakpoint-lg: 61.875rem;
 }
